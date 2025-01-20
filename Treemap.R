@@ -16,6 +16,11 @@ monthly_counts <- data %>%
   group_by(year_month) %>%
   summarise(article_count = n())
 
+data_summary <- data %>%
+  group_by(category_level_1, category_level_2) %>%
+  summarise(article_count = n()) %>%
+  ungroup()
+
 pdf("/Users/joe/Downloads/treemap.pdf", width = 8, height = 6)  # Set the file name and dimensions
 treemap(data_summary,
         index = c("category_level_1", "category_level_2"),  # Layers of categories
