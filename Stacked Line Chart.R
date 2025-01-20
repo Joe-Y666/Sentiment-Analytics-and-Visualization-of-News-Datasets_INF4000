@@ -29,8 +29,8 @@ customdatacustom_colors <- c(
   "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd", 
   "#ccebc5", "#ffed6f","#CC79A7", "#377eb8", "#4daf4a", "#ff7f00", "#ffff33"
 )
-# Create the stacked line plot using ggplot2
 
+# Create the stacked line plot using ggplot2
 ggplot(aggregated_data, aes(x = month, y = article_count, fill = category_level_1, group = category_level_1)) +
   geom_area(alpha = 0.6) +  # Stacked line chart using geom_area
   scale_fill_manual(values = custom_colors) +  # Apply a color palette
